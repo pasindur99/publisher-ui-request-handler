@@ -56,8 +56,8 @@ import org.apache.hc.client5.http.entity.mime.HttpMultipartMode;
 import org.apache.http.Consts;
 import org.apache.http.cookie.SM;
 import io.entgra.device.mgt.core.ui.request.interceptor.beans.ProxyResponse;
-import org.wso2.carbon.context.PrivilegedCarbonContext;
-import io.entgra.device.mgt.core.device.mgt.common.spi.OTPManagementService;
+//import org.wso2.carbon.context.PrivilegedCarbonContext;
+//import io.entgra.device.mgt.core.device.mgt.common.spi.OTPManagementService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -79,7 +79,7 @@ public class HandlerUtil {
     private static boolean isLoginCacheInitialized = false;
     private static AuthData authData;
 
-    private static OTPManagementService otpManagementService;
+//    private static OTPManagementService otpManagementService;
 
     /***
      *
@@ -721,13 +721,13 @@ public class HandlerUtil {
         return StringUtils.isEmpty(System.getProperty(property));
     }
 
-    public static OTPManagementService getOTPManagementService() {
-        if (otpManagementService == null) {
-            otpManagementService = (OTPManagementService) PrivilegedCarbonContext
-                    .getThreadLocalCarbonContext().getOSGiService(OTPManagementService.class, null);
-        }
-        return otpManagementService;
-    }
+//    public static OTPManagementService getOTPManagementService() {
+//        if (otpManagementService == null) {
+//            otpManagementService = (OTPManagementService) PrivilegedCarbonContext
+//                    .getThreadLocalCarbonContext().getOSGiService(OTPManagementService.class, null);
+//        }
+//        return otpManagementService;
+//    }
 
     public static String generateStateToken() {
         return new BigInteger(130, new SecureRandom()).toString(32);
