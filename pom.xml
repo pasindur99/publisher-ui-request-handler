@@ -120,11 +120,11 @@
             <artifactId>io.entgra.device.mgt.core.device.mgt.core</artifactId>
             <version>5.0.40-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.3.23</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-web</artifactId>-->
+<!--            <version>5.3.23</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-bundle-jaxrs</artifactId>
@@ -176,11 +176,11 @@
             <artifactId>commons-lang</artifactId>
             <version>2.4</version>
         </dependency>
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>javax.websocket</groupId>-->
+<!--            <artifactId>javax.websocket-api</artifactId>-->
+<!--            <version>1.1</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>
