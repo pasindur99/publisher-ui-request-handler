@@ -104,19 +104,7 @@
         </profile>
     </profiles>
 
-
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.tomcat</groupId>-->
-<!--            <artifactId>tomcat-util</artifactId>-->
-<!--            <version>11.0.0-M17</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.wso2.orbit.org.apache.tomcat</groupId>-->
-<!--            <artifactId>tomcat-servlet-api</artifactId>-->
-<!--            <version>9.0.71.wso2v1</version>-->
-<!--        </dependency>-->
-
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -126,6 +114,7 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.9.1</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.entgra.device.mgt.core</groupId>
@@ -141,27 +130,13 @@
                     <artifactId>tomcat</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework</groupId>-->
-<!--            <artifactId>spring-web</artifactId>-->
-<!--            <version>5.3.23</version>-->
-<!--        </dependency>-->
-        <dependency>
-            <groupId>org.apache.cxf</groupId>
-            <artifactId>cxf-bundle-jaxrs</artifactId>
-            <version>2.7.18</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -199,11 +174,5 @@
             <artifactId>commons-lang</artifactId>
             <version>2.4</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>javax.websocket</groupId>-->
-<!--            <artifactId>javax.websocket-api</artifactId>-->
-<!--            <version>1.1</version>-->
-<!--        </dependency>-->
     </dependencies>
-
 </project>
