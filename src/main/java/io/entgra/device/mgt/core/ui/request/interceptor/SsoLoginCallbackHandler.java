@@ -82,7 +82,7 @@ public class SsoLoginCallbackHandler extends HttpServlet {
 
         ClassicHttpRequest tokenEndpoint = ClassicRequestBuilder.post(keyManagerUrl + HandlerConstants.OAUTH2_TOKEN_ENDPOINT)
                 .setEntity(tokenEPPayload)
-                .setHeader(org.apache.hc.core5.http.HttpHeaders.CONTENT_TYPE, org.apache.hc.core5.http.ContentType.APPLICATION_FORM_URLENCODED.toString())
+                .setHeader(org.apache.hc.core5.http.HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_FORM_URLENCODED.toString())
                 .setHeader(org.apache.hc.core5.http.HttpHeaders.AUTHORIZATION, HandlerConstants.BASIC + session.getAttribute("encodedClientApp"))
                 .build();
 

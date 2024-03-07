@@ -19,16 +19,16 @@
 package io.entgra.device.mgt.core.ui.request.interceptor.util;
 
 import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import io.entgra.device.mgt.core.device.mgt.common.spi.OTPManagementService;
 import io.entgra.device.mgt.core.ui.request.interceptor.beans.AuthData;
+import io.entgra.device.mgt.core.ui.request.interceptor.beans.ProxyResponse;
 import io.entgra.device.mgt.core.ui.request.interceptor.cache.LoginCache;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -39,6 +39,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.client5.http.entity.mime.HttpMultipartMode;
 import org.apache.hc.client5.http.entity.mime.InputStreamBody;
 import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -52,12 +53,9 @@ import org.apache.hc.core5.http.io.entity.BufferedHttpEntity;
 import org.apache.hc.core5.http.io.entity.InputStreamEntity;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.apache.hc.core5.ssl.SSLContextBuilder;
-import org.apache.hc.client5.http.entity.mime.HttpMultipartMode;
 import org.apache.http.Consts;
 import org.apache.http.cookie.SM;
-import io.entgra.device.mgt.core.ui.request.interceptor.beans.ProxyResponse;
-//import org.wso2.carbon.context.PrivilegedCarbonContext;
-//import io.entgra.device.mgt.core.device.mgt.common.spi.OTPManagementService;
+import org.wso2.carbon.context.PrivilegedCarbonContext;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -79,7 +77,7 @@ public class HandlerUtil {
     private static boolean isLoginCacheInitialized = false;
     private static AuthData authData;
 
-//    private static OTPManagementService otpManagementService;
+    private static OTPManagementService otpManagementService;
 
     /***
      *
@@ -721,13 +719,13 @@ public class HandlerUtil {
         return StringUtils.isEmpty(System.getProperty(property));
     }
 
-//    public static OTPManagementService getOTPManagementService() {
-//        if (otpManagementService == null) {
-//            otpManagementService = (OTPManagementService) PrivilegedCarbonContext
-//                    .getThreadLocalCarbonContext().getOSGiService(OTPManagementService.class, null);
-//        }
-//        return otpManagementService;
-//    }
+    public static OTPManagementService getOTPManagementService() {
+        if (otpManagementService == null) {
+            otpManagementService = (OTPManagementService) PrivilegedCarbonContext
+                    .getThreadLocalCarbonContext().getOSGiService(OTPManagementService.class, null);
+        }
+        return otpManagementService;
+    }
 
     public static String generateStateToken() {
         return new BigInteger(130, new SecureRandom()).toString(32);
