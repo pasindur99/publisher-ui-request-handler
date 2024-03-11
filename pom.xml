@@ -23,7 +23,7 @@
 
     <groupId>publisher-ui-request-handler</groupId>
     <artifactId>io.entgra.device.mgt.core.ui.request.interceptor</artifactId>
-    <version>5.0.40-SNAPSHOT</version>
+    <version>5.0.41-SNAPSHOT</version>
 
     <packaging>war</packaging>
     <name>Entgra - Request Handling Proxy Servlet</name>
@@ -113,7 +113,7 @@
         <dependency>
             <groupId>io.entgra.device.mgt.core</groupId>
             <artifactId>io.entgra.device.mgt.core.device.mgt.core</artifactId>
-            <version>5.0.40-SNAPSHOT</version>
+            <version>5.0.41-SNAPSHOT</version>
             <exclusions>
                 <exclusion>
                     <groupId>javax.websocket</groupId>
